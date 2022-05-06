@@ -1,7 +1,7 @@
 # NASCAR™ Pit Tryouts
 
 ## Lets get luggin ...
-___
+
 
 ### You feel the roars of the engines. You smell the burning of the tires. Your andreline is kicking. You've been a NASCAR™ fan since you could sit in the stands and now you're in the pits. 
 
@@ -9,7 +9,7 @@ ___
 
 ### But if you can't beat the clock, you won't be suiting up for a raceday any time soon. Your job is to loosen every lug nut off the car's' wheel, pickup the the fallen lug nuts, zap them back onto the wheel ... __all before the clock reaches 0!__
 
-____
+
 ## Created using:
 * HTML5
     * Canvas
@@ -20,7 +20,7 @@ ____
 
 
 ## MVP
-___
+
 
 * Create a cursor controlled game
 * Create a landing page with a start and restart button
@@ -38,7 +38,7 @@ ___
 
 
 ## Stretch Goals
-___
+
 
 * Have different difficulty levels, causing timer to be faster
 * Have game be multi-player
@@ -48,7 +48,7 @@ ___
 * Add sound to the click and hold
 
 ## Forseeable Roadblacks
-____
+
 * Creating lug nut object hitboxes and wheel hitboxes for each lugnut
 * Getting correct combination of mouse events 
 * Having game stop and not be playable upon lose - timer runs out
