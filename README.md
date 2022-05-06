@@ -9,6 +9,13 @@ ___
 
 ### But if you can't beat the clock, you won't be suiting up for a raceday any time soon. Your job is to loosen every lug nut off the car's' wheel, pickup the the fallen lug nuts, zap them back onto the wheel ... __all before the clock reaches 0!__
 
+____
+## Created using:
+* HTML5
+    * Canvas
+* CSS 
+* JavaScript
+
 ![WIREFRAME](./images/wireframe-1.jpeg)
 
 
@@ -38,3 +45,11 @@ ___
     * Each persons time gets saved - if they beat the clock
     * Have leaderboard of times (including DNFs)
 * Animate wheel to move out and into game area 1
+* Add sound to the click and hold
+
+## Forseeable Roadblacks
+____
+* Creating lug nut object hitboxes and wheel hitboxes for each lugnut
+* Getting correct combination of mouse events 
+* Having game stop and not be playable upon lose - timer runs out
+* Having lug nuts not fall outside of the random field
