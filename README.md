@@ -35,6 +35,6 @@ ___
 
 * Have different difficulty levels, causing timer to be faster
 * Have game be multi-player
-    * Timer gets set to the faster players time plus a few fractions of a second
-    * Have leaderboard of time
+    * Each persons time gets saved - if they beat the clock
+    * Have leaderboard of times (including DNFs)
 * Animate wheel to move out and into game area 1
