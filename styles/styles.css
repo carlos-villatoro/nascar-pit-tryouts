@@ -33,8 +33,6 @@ html,body {
   }
 
   canvas {
-    /* background-image: url('../img/stone.png'); */
-    /* background-repeat: repeat; */
     background-color: #222;
     width: 100%;
     height: 100;
@@ -42,6 +40,7 @@ html,body {
   }
   
   canvas:active{
+      /* simple way to make the cursor custom inside of canvas, but has to be small*/
     cursor: url('../images/cursor.png'), default; /* must be 32x32px */
     /* resource: https://www.youtube.com/watch?v=LaZs-GWtZvc */
   }
@@ -92,3 +91,21 @@ html,body {
     grid-area: btm-right;
     /* background-color: #222; */
   }
+
+  /* going to be creating a custom js cursor that can be clicked through */
+  /* resource: https://webanimation.blog/blog/how-to-create-a-custom-cursor-without-using-canvas */
+
+  /* creating a cursor div */
+  :root { /* "document", set global css variables */
+      --posX: 0px;
+      --posY: 0px;
+  }
+
+    /* creating a cursor div */
+    .cursorWrapper {
+        transform: translate(var(--posX), var(--posY), 0);
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none; /* 
+    }
