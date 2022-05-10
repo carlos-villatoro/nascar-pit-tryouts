@@ -4,6 +4,7 @@ html,body {
   }
   #header {
     background-image: url('../images/banner1.png');
+    /* src url https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbxXwppu8QseR6cMGw8ZYS9VdQVTNgMDNbfA&usqp=CAU */
     background-size: 100%;
     background-position: center;
     padding: 1rem;
@@ -19,6 +20,7 @@ html,body {
     text-align: center;
     background-color: black;
     background-image: url('../images/background1.jpeg');
+    /* src url https://nascar.nbcsports.com/wp-content/uploads/sites/9/2016/03/484903754-e1458314273947.jpg */
     background-size: initial;
     background-repeat: space;
     background-position: center;
@@ -36,8 +38,14 @@ html,body {
     background-color: #222;
     width: 100%;
     height: 100;
-   
+    background-image: url('../images/canvas-background.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+ 
   }
+
+
   
   canvas:active{
       /* simple way to make the cursor custom inside of canvas, but has to be small*/
@@ -101,11 +109,11 @@ html,body {
       --posY: 0px;
   }
 
-    /* creating a cursor div */
-    .cursorWrapper {
+  /* creating a cursor div */
+  .cursorWrapper {
         transform: translate(var(--posX), var(--posY), 0);
         position: fixed;
         top: 0;
         left: 0;
-        pointer-events: none; /* 
+        pointer-events: none;
     }
