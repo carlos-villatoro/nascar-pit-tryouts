@@ -36,15 +36,15 @@ class Nuts {
 
 // nuts specific spawn
 const nut0 = new Nuts(535, 150, 'yellow', 20, 20)
-// const nut1 = new Nuts(485, 305, 'yellow', 20, 20)
-// const nut2 = new Nuts(615, 210, 'yellow', 20, 20)
-// const nut3 = new Nuts(455, 210, 'yellow', 20, 20)
-// const nut4 = new Nuts(585, 305, 'yellow', 20, 20)
+const nut1 = new Nuts(485, 305, 'yellow', 20, 20)
+const nut2 = new Nuts(615, 210, 'yellow', 20, 20)
+const nut3 = new Nuts(455, 210, 'yellow', 20, 20)
+const nut4 = new Nuts(585, 305, 'yellow', 20, 20)
 nut0.render()
-// nut1.render()
-// nut2.render()
-// nut3.render()
-// nut4.render()
+nut1.render()
+nut2.render()
+nut3.render()
+nut4.render()
 
 
 // // nuts random spawn
@@ -69,15 +69,15 @@ function mouseIsInsideCircle(mouseX, mouseY, nx, ny, radius) {
     let dy = mouseY - ny;
     return (dx * dx + dy * dy <= radius * radius);
 } 
-function getMousePos(canvas, evt) {
+function getMousePos(canvas, e) {
     let rect = canvas.getBoundingClientRect();
     return {
-        x: evt.clientX - rect.left,
-        y: evt.clientY - rect.top
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top
     };
 }
-canvas.addEventListener('mousemove', function (evt) {
-    let mousePos = getMousePos(canvas, evt);
+canvas.addEventListener('mousemove', function (e) {
+    let mousePos = getMousePos(canvas, e);
     let message = 'Mouse position: ' + parseInt(mousePos.x) + ',' + parseInt(mousePos.y);
     writeMessage(canvas, message);
 }, false);
@@ -88,14 +88,14 @@ function writeMessage(canvas, message) {
     ctx.fillStyle = 'black';
     ctx.fillText(message, 10, 25);
 }
-canvas.addEventListener('mousedown', function (evt) {
-    let mousePos = getMousePos(canvas, evt);
+canvas.addEventListener('mousedown', function (e) {
+    let mousePos = getMousePos(canvas, e);
     let mouseX = mousePos.x;
     let mouseY = mousePos.y;
     // if the mouse is inside the nut
     if (mouseIsInsideCircle(mouseX, mouseY, nx, ny, radius)) {
         // erase the canvas
-        ctx.clearRect(0, 30, canvas.width, canvas.height);
+        ctx.clearRect(535, 150, 20, 20);
     }
 }, false);
 
