@@ -65,7 +65,10 @@ let timer
 
 // start game on first click
 canvas.addEventListener('click', startGame)
-timer = setInterval(function(){
+
+function startGame(){
+    canvas.removeEventListener('click', startGame) // wont start game over and over
+    timer = setInterval(function(){ // going to take a sec off timer each second
     countdown--;
     console.log('end start', countdown, timer)
     ctx.fillText('Time Remaining: ' + countdown, 10, 50);
@@ -73,11 +76,9 @@ timer = setInterval(function(){
     clearInterval(timer)
 }
 }, 1000)
-function startGame(){
-   
     // console.log('start')
-     // going to take a sec off timer each second
-    canvas.removeEventListener('click', startGame) // wont start game over and over
+    
+    
     
     
 }
