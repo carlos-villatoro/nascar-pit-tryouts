@@ -58,10 +58,27 @@ nut4.render()
 
 
 // GAME FUNCTIONS
+
+//timer
+let countdown = 5
+let timer = null
+
+// start game on first click
+canvas.addEventListener('click', startGame)
+function startGame(){
+    // console.log('start')
+    timer = setInterval(function(){
+        countdown--;
+    }, 1000) // going to take a sec off timer each second
+    canvas.removeEventListener('click', startGame) // wont start game over and over
+    // console.log('end start')
+    
+}
+
 // resource: https://www.demo2s.com/javascript/javascript-canvas-make-the-circle-disappear-when-clicked.html
 const n0x = 545 // nut  value + .5size
 const n0y = 160// nut y value + .5size
-radius = 13
+radius = 15
 
 
 // hit-test the nut render
