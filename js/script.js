@@ -69,6 +69,9 @@ timer = setInterval(function(){
     countdown--;
     console.log('end start', countdown, timer)
     ctx.fillText('Time Remaining: ' + countdown, 10, 50);
+    if (countdown <= 0) {
+    clearInterval(timer)
+}
 }, 1000)
 function startGame(){
    
@@ -78,7 +81,9 @@ function startGame(){
     
     
 }
-// startGame()
+// function endGame(){
+//     clearInterval(timer)
+// }
 
 console.log('end start', countdown, timer)
 
