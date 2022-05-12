@@ -58,13 +58,12 @@ nut4.render()
 
 
 // GAME FUNCTIONS
-
+const gameLoopInterval = setInterval(gameLoop, 60)
 //timer
 let countdown = 11
 let timer 
 
-// start game on first click
-canvas.addEventListener('click', startGame)
+
 
 function startGame(){
     canvas.removeEventListener('click', startGame) // wont start game over and over
@@ -250,142 +249,9 @@ radius = 15
 
 
 console.log('end start', countdown, timer)
-
-
-
-// // resource: https://www.demo2s.com/javascript/javascript-canvas-make-the-circle-disappear-when-clicked.html
-// const n0x = 545 // nut  value + .5size
-// const n0y = 160// nut y value + .5size
-// radius = 15
-
-
-// // hit-test the nut render
-// function mouseIsInsideCircle(mouseX, mouseY, n0x, n0y, radius) {
-//     let dx = mouseX - n0x;
-//     let dy = mouseY - n0y;
-//     return (dx * dx + dy * dy <= radius * radius); // checks if area of click is == to area of square location
-// } 
-
-// function getMousePos(canvas, e) {
-//     let rect = canvas.getBoundingClientRect();
-//     return {
-//         x: e.clientX - rect.left,
-//         y: e.clientY - rect.top
-//     }; // gets coordinates for the mouse click
-// }
-
-// canvas.addEventListener('mousemove', function (e) {
-//     let mousePos = getMousePos(canvas, e);
-//     let message = 'Mouse position: ' + parseInt(mousePos.x) + ',' + parseInt(mousePos.y);
-//     writeMessage(canvas, message);
-// }, false); //tracks location of mouse in canvas
-
-// let mousePos;
-// function writeMessage(canvas, message) {
-//     ctx.clearRect(0, 0, canvas.width, 30);
-//     ctx.font = '18pt Calibri';
-//     ctx.fillStyle = 'black';
-//     ctx.fillText(message, 10, 25);
-// } // shows above
-
-// canvas.addEventListener('mousedown', function (e) {
-//     let mousePos = getMousePos(canvas, e);
-//     let mouseX = mousePos.x;
-//     let mouseY = mousePos.y;
-//     // if the mouse is inside the nut
-//     if (mouseIsInsideCircle(mouseX, mouseY, n0x, n0y, radius)) {
-//         // erase the canvas
-//         ctx.clearRect(535, 150, 20, 20); // clears that certain square 
-//     }
-// }, false);
-
-
-
-// // want to figure out how to do this with an array of the differet x and ys of the squares
-// // need it to recieve each combo at each instance = array and for loop
-// //update cant figure out about will do these for each nut
-
-// const n1x = 495 // nut  value + .5size
-// const n1y = 315// nut y value + .5size
-
-
-// // hit-test the nut render
-// function mouseIsInsideCircle(mouseX, mouseY, n1x, n1y, radius) {
-//     let dx = mouseX - n1x;
-//     let dy = mouseY - n1y;
-//     return (dx * dx + dy * dy <= radius * radius); // checks if area of click is == to area of square location
-// } 
-// canvas.addEventListener('mousedown', function (e) {
-//     let mousePos = getMousePos(canvas, e);
-//     let mouseX = mousePos.x;
-//     let mouseY = mousePos.y;
-//     // if the mouse is inside the nut
-//     if (mouseIsInsideCircle(mouseX, mouseY, n1x, n1y, radius)) {
-//         // erase the canvas
-//         ctx.clearRect(485, 305, 20, 20); // clears that certain square 
-//     }
-// }, false);
-
-
-// const n2x = 625 // nut  value + .5size
-// const n2y = 220// nut y value + .5size
-
-
-// // hit-test the nut render
-// function mouseIsInsideCircle(mouseX, mouseY, n2x, n2y, radius) {
-//     let dx = mouseX - n2x;
-//     let dy = mouseY - n2y;
-//     return (dx * dx + dy * dy <= radius * radius); // checks if area of click is == to area of square location
-// } 
-// canvas.addEventListener('mousedown', function (e) {
-//     let mousePos = getMousePos(canvas, e);
-//     let mouseX = mousePos.x;
-//     let mouseY = mousePos.y;
-//     // if the mouse is inside the nut
-//     if (mouseIsInsideCircle(mouseX, mouseY, n2x, n2y, radius)) {
-//         // erase the canvas
-//         ctx.clearRect(615, 210, 20, 20); // clears that certain square 
-//     }
-// }, false);
-
-// const n3x = 465 // nut  value + .5size
-// const n3y = 220// nut y value + .5size
-
-
-// // hit-test the nut render
-// function mouseIsInsideCircle(mouseX, mouseY, n3x, n3y, radius) {
-//     let dx = mouseX - n3x;
-//     let dy = mouseY - n3y;
-//     return (dx * dx + dy * dy <= radius * radius); // checks if area of click is == to area of square location
-// } 
-// canvas.addEventListener('mousedown', function (e) {
-//     let mousePos = getMousePos(canvas, e);
-//     let mouseX = mousePos.x;
-//     let mouseY = mousePos.y;
-//     // if the mouse is inside the nut
-//     if (mouseIsInsideCircle(mouseX, mouseY, n3x, n3y, radius)) {
-//         // erase the canvas
-//         ctx.clearRect(455, 210, 20, 20); // clears that certain square 
-//     }
-// }, false);
-
-// const n4x = 595 // nut  value + .5size
-// const n4y = 315// nut y value + .5size
-
-
-// // hit-test the nut render
-// function mouseIsInsideCircle(mouseX, mouseY, n4x, n4y, radius) {
-//     let dx = mouseX - n4x;
-//     let dy = mouseY - n4y;
-//     return (dx * dx + dy * dy <= radius * radius); // checks if area of click is == to area of square location
-// } 
-// canvas.addEventListener('mousedown', function (e) {
-//     let mousePos = getMousePos(canvas, e);
-//     let mouseX = mousePos.x;
-//     let mouseY = mousePos.y;
-//     // if the mouse is inside the nut
-//     if (mouseIsInsideCircle(mouseX, mouseY, n4x, n4y, radius)) {
-//         // erase the canvas
-//         ctx.clearRect(585, 305, 20, 20); // clears that certain square 
-//     }
-// }, false);
+function gameLoop(){
+    // clear the canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    // start game on first click
+    canvas.addEventListener('click', startGame)
+}
