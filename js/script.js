@@ -63,7 +63,8 @@ const gameLoopInterval = setInterval(gameLoop, 60)
 let countdown = 11
 let timer 
 
-
+`// start game on first click
+canvas.addEventListener('click', startGame)`
 
 function startGame(){
     canvas.removeEventListener('click', startGame) // wont start game over and over
@@ -73,13 +74,13 @@ function startGame(){
     ctx.fillText('Time Remaining: ' + countdown, 10, 50);
     if (countdown <= 0) {
     clearInterval(timer)
-}
-}, 1000)
+    }
+    }, 1000)
     // console.log('start')
     
     const n0x = 545 // nut  value + .5size
-const n0y = 160// nut y value + .5size
-radius = 15
+    const n0y = 160// nut y value + .5size
+    radius = 15
 
 
     // hit-test the nut render
@@ -252,6 +253,5 @@ console.log('end start', countdown, timer)
 function gameLoop(){
     // clear the canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height)
-    // start game on first click
-    canvas.addEventListener('click', startGame)
+
 }
