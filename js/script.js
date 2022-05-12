@@ -63,6 +63,13 @@ nut4.render()
 let countdown = 11
 let timer 
 
+ // hit-test the nut render
+ function mouseIsInsideCircle(mouseX, mouseY, n0x, n0y, radius) {
+    let dx = mouseX - n0x;
+    let dy = mouseY - n0y;
+    return (dx * dx + dy * dy <= radius * radius); // checks if area of click is == to area of square location
+} 
+
 // start game on first click
 canvas.addEventListener('click', startGame)
 
@@ -84,11 +91,7 @@ function startGame(){
 
 
     // hit-test the nut render
-    function mouseIsInsideCircle(mouseX, mouseY, n0x, n0y, radius) {
-        let dx = mouseX - n0x;
-        let dy = mouseY - n0y;
-        return (dx * dx + dy * dy <= radius * radius); // checks if area of click is == to area of square location
-    } 
+   mouseIsInsideCircle()
 
     function getMousePos(canvas, e) {
         let rect = canvas.getBoundingClientRect();
@@ -120,13 +123,15 @@ function startGame(){
         if (mouseIsInsideCircle(mouseX, mouseY, n0x, n0y, radius)) {
             // erase the canvas
             ctx.clearRect(535, 150, 20, 20); // clears that certain square 
-            let randX = Math.floor(Math.random() * canvas.width - 40)
-            let randY = Math.floor(Math.random() * canvas.height - 40)
+            let randX = Math.floor(Math.random() * canvas.width - 20)
+            let randY = Math.floor(Math.random() * canvas.height - 20)
             const nutR0 = new Nuts(randX, randY, 'yellow', 20, 20)
             nutR0.render()
         }
-
-    }, false);
+        
+    }
+    , false);
+    
 
 
 
@@ -139,11 +144,8 @@ function startGame(){
 
 
     // hit-test the nut render
-    function mouseIsInsideCircle(mouseX, mouseY, n1x, n1y, radius) {
-        let dx = mouseX - n1x;
-        let dy = mouseY - n1y;
-        return (dx * dx + dy * dy <= radius * radius); // checks if area of click is == to area of square location
-    } 
+   mouseIsInsideCircle()
+
     canvas.addEventListener('mousedown', function (e) {
         let mousePos = getMousePos(canvas, e);
         let mouseX = mousePos.x;
@@ -152,10 +154,15 @@ function startGame(){
         if (mouseIsInsideCircle(mouseX, mouseY, n1x, n1y, radius)) {
             // erase the canvas
             ctx.clearRect(485, 305, 20, 20); // clears that certain square 
-            let randX = Math.floor(Math.random() * canvas.width - 40)
-            let randY = Math.floor(Math.random() * canvas.height - 40)
+            let randX = Math.floor(Math.random() * canvas.width - 20)
+            let randY = Math.floor(Math.random() * canvas.height - 20)
             const nutR1 = new Nuts(randX, randY, 'yellow', 20, 20)
             nutR1.render()
+            canvas.e
+            // if (mouseIsInsideCircle(mouseX, mouseY, randX, randY, radius)) {
+            //     ctx.clearRect(randX, randY, 20, 20)
+            //     nut1.render()
+            // }
         }
 
     }, false);
@@ -165,12 +172,8 @@ function startGame(){
     const n2y = 220// nut y value + .5size
 
 
-    // hit-test the nut render
-    function mouseIsInsideCircle(mouseX, mouseY, n2x, n2y, radius) {
-        let dx = mouseX - n2x;
-        let dy = mouseY - n2y;
-        return (dx * dx + dy * dy <= radius * radius); // checks if area of click is == to area of square location
-    } 
+    mouseIsInsideCircle()
+
     canvas.addEventListener('mousedown', function (e) {
         let mousePos = getMousePos(canvas, e);
         let mouseX = mousePos.x;
@@ -179,8 +182,8 @@ function startGame(){
         if (mouseIsInsideCircle(mouseX, mouseY, n2x, n2y, radius)) {
             // erase the canvas
             ctx.clearRect(615, 210, 20, 20); // clears that certain square 
-            let randX = Math.floor(Math.random() * canvas.width - 40)
-            let randY = Math.floor(Math.random() * canvas.height - 40)
+            let randX = Math.floor(Math.random() * canvas.width - 20)
+            let randY = Math.floor(Math.random() * canvas.height - 20)
             const nutR2 = new Nuts(randX, randY, 'yellow', 20, 20)
             nutR2.render()
         }
@@ -192,11 +195,8 @@ function startGame(){
 
 
     // hit-test the nut render
-    function mouseIsInsideCircle(mouseX, mouseY, n3x, n3y, radius) {
-        let dx = mouseX - n3x;
-        let dy = mouseY - n3y;
-        return (dx * dx + dy * dy <= radius * radius); // checks if area of click is == to area of square location
-    } 
+    mouseIsInsideCircle()
+
     canvas.addEventListener('mousedown', function (e) {
         let mousePos = getMousePos(canvas, e);
         let mouseX = mousePos.x;
@@ -205,8 +205,8 @@ function startGame(){
         if (mouseIsInsideCircle(mouseX, mouseY, n3x, n3y, radius)) {
             // erase the canvas
             ctx.clearRect(455, 210, 20, 20); // clears that certain square 
-            let randX = Math.floor(Math.random() * canvas.width - 40)
-            let randY = Math.floor(Math.random() * canvas.height - 40)
+            let randX = Math.floor(Math.random() * canvas.width - 20)
+            let randY = Math.floor(Math.random() * canvas.height - 20)
             const nutR3 = new Nuts(randX, randY, 'yellow', 20, 20)
             nutR3.render()
         }
@@ -218,11 +218,8 @@ function startGame(){
 
 
     // hit-test the nut render
-    function mouseIsInsideCircle(mouseX, mouseY, n4x, n4y, radius) {
-        let dx = mouseX - n4x;
-        let dy = mouseY - n4y;
-        return (dx * dx + dy * dy <= radius * radius); // checks if area of click is == to area of square location
-    } 
+    mouseIsInsideCircle()
+     
     canvas.addEventListener('mousedown', function (e) {
         let mousePos = getMousePos(canvas, e);
         let mouseX = mousePos.x;
@@ -231,27 +228,19 @@ function startGame(){
         if (mouseIsInsideCircle(mouseX, mouseY, n4x, n4y, radius)) {
             // erase the canvas
             ctx.clearRect(585, 305, 20, 20); // clears that certain square 
-            let randX = Math.floor(Math.random() * canvas.width - 40)
-            let randY = Math.floor(Math.random() * canvas.height - 40)
+            let randX = Math.floor(Math.random() * canvas.width - 20)
+            let randY = Math.floor(Math.random() * canvas.height - 20)
             const nutR4 = new Nuts(randX, randY, 'yellow', 20, 20)
             nutR4.render()
         }
         
     }, false);
-    
+    canvas.removeEventListener('mousedown', e)
     
 }
-// function endGame(){
-//     clearInterval(timer)
-// }
 
 
 
 
 
 console.log('end start', countdown, timer)
-// function gameLoop(){
-//     // clear the canvas
-//     ctx.clearRect(0, 0, canvas.width, canvas.height)
-
-// }
