@@ -70,8 +70,17 @@ let timer
     return (dx * dx + dy * dy <= radius * radius); // checks if area of click is == to area of square location
 } 
 
+function getMousePos(canvas, e) {
+    let rect = canvas.getBoundingClientRect();
+    return {
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top
+    }; // gets coordinates for the mouse click
+}
+
 // start game on first click
 canvas.addEventListener('click', startGame)
+
 
 function startGame(){
     canvas.removeEventListener('click', startGame) // wont start game over and over
@@ -85,8 +94,8 @@ function startGame(){
     }, 1000)
     // console.log('start')
     
-    const n0x = 545 // nut  value + .5size
-    const n0y = 160// nut y value + .5size
+    let n0x = 545 // nut  value + .5size
+    let n0y = 160// nut y value + .5size
     radius = 15
 
 
@@ -115,11 +124,13 @@ function startGame(){
         ctx.fillText(message, 10, 25);
     } // shows above
 
-    canvas.addEventListener('mousedown', function (e) {
+    canvas.addEventListener('click', function (e) {
+        if (nut0.alive = true){
+        e.preventDefault()
         let mousePos = getMousePos(canvas, e);
         let mouseX = mousePos.x;
         let mouseY = mousePos.y;
-        // if the mouse is inside the nut
+
         if (mouseIsInsideCircle(mouseX, mouseY, n0x, n0y, radius)) {
             // erase the canvas
             ctx.clearRect(535, 150, 20, 20); // clears that certain square 
@@ -128,9 +139,11 @@ function startGame(){
             const nutR0 = new Nuts(randX, randY, 'yellow', 20, 20)
             nutR0.render()
         }
+        }
         
     }
-    , false);
+    , false)
+    // canvas.removeEventListener('click', (e))
     
 
 
@@ -219,7 +232,7 @@ function startGame(){
 
     // hit-test the nut render
     mouseIsInsideCircle()
-     
+
     canvas.addEventListener('mousedown', function (e) {
         let mousePos = getMousePos(canvas, e);
         let mouseX = mousePos.x;
@@ -235,7 +248,6 @@ function startGame(){
         }
         
     }, false);
-    canvas.removeEventListener('mousedown', e)
     
 }
 
