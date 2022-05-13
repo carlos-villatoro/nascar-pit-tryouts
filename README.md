@@ -93,5 +93,5 @@ __[Nascar-pit-tryouts](https://carlos-villatoro.github.io/nascar-pit-tryouts/)__
 ### https://developer.ibm.com/tutorials/wa-games/#download
 * Used to understand mouse events 
 
-### Various https://w3schools.com and https://developer.mozilla.org/ guides and refernces were used for documentation on mouse events, interval control,  
+### Various https://w3schools.com and https://developer.mozilla.org/ guides and refernces were used for documentation on mouse events, interval control, canvas manipulation, and many other functions. 
 
