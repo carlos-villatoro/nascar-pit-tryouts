@@ -4,7 +4,7 @@
 const canvas = document.querySelector('#canvas')
 
 // Timer
-let countdown = 11
+let countdown = 20
 let timer
 // CANVAS SETUP / GAME STATE
 
@@ -85,6 +85,9 @@ function start(){
 
 }
 
+function endgame(){
+    clearInterval(timer)
+}
 
 
 function startGame(){
@@ -140,8 +143,8 @@ function startGame(){
         ctx.fillText(message, 10, 25);
     } // shows above
     
-    let rand0x = Math.floor(Math.random() * canvas.width )
-    let rand0y = Math.floor(Math.random() * canvas.height )
+    let rand0x = Math.floor(Math.random() * canvas.width - 20)
+    let rand0y = Math.floor(Math.random() * canvas.height -20 )
     let nutR0 = new Nuts(rand0x, rand0y, 'yellow', 20, 20)
     canvas.addEventListener('mousedown', function (e) {
         
@@ -308,9 +311,25 @@ function startGame(){
             ctx.clearRect(nutR4.x, nutR4.y, 20, 20)
             nut4.render()
             nut4.alive = false
+
         }  
     }, false)
+
 }
-
-
-start()
+function gameLoop(){
+    // clear the canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    start()
+    console.log(nut0.alive, nut1.alive, nut2.alive, nut3.alive, nut4.alive)
+    canvas.addEventListener('mousedown', function (e) {
+        if(nut0.alive === false &&
+            nut1.alive === false &&
+            nut2.alive === false &&
+            nut3.alive === false &&
+            nut4.alive === false 
+            ){
+                endgame()
+                document.querySelector('#btm-right').innerText = "YOU DID IT! YOU'RE IN!!"
+        }
+}), false}
+gameLoop()

@@ -106,6 +106,9 @@ html,body {
   #btm-right {
     grid-area: btm-right;
     /* background-color: #222; */
+    font-family: 'Racing Sans One', cursive;
+    color: #f9d86f;
+    font-size: 26px;
   }
 
   /* going to be creating a custom js cursor that can be clicked through */
