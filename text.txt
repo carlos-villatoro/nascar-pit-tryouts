@@ -1,0 +1,34 @@
+## MVP
+
+
+* Create a cursor controlled game
+* Create a landing page with a start and restart button
+* Create a canvas area to play the game in
+* Change cursor within game area to impact gun
+* Create mouse events for clicking lug nuts
+* Start timer upon first mouse click
+* Have lug nuts move when clicked
+* Create a random render after each lug nut has been removed
+* Have hitboxes that lug nuts need to be clicked on
+* Stop timer when all lug nuts are back on wheel
+* Create a win event if timer is not 0:00, record time task was completed in
+* Create a lose even if timer reaches 0:00 before player completes task
+* Restart button should reset game
+
+
+## Stretch Goals
+
+
+* Have different difficulty levels, causing timer to be faster
+* Have game be multi-player
+    * Each persons time gets saved - if they beat the clock
+    * Have leaderboard of times (including DNFs)
+* Animate wheel to move out and into game area 1
+* Add sound to the click and hold
+
+## Forseeable Roadblacks
+
+* Creating lug nut object hitboxes and wheel hitboxes for each lugnut
+* Getting correct combination of mouse events 
+* Having game stop and not be playable upon lose - timer runs out
+* Having lug nuts not fall outside of the random field

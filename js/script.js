@@ -323,7 +323,6 @@ function gameLoop(){
                 document.querySelector('#btm-right').innerText = "YOU DID IT! YOU'RE IN!!"
         } else if(countdown <= 0) {
             ctx.clearRect(0, 0, canvas.width, canvas.height)
-            document.querySelector('#btm-right').innerText = "SORRY KID! TOO SLOW TO ROLL!!"
         }
     }), false
 
