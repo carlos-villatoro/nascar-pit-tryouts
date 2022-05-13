@@ -66,6 +66,7 @@ html,body {
   grid-template-areas: "top-left top-left top-right"
                         "game game game"
                         "btm-left btm-right btm-right";
+    
   }
   
   #top-left, #top-right, #btm-left, #btm-right {
@@ -77,12 +78,16 @@ html,body {
   
   #top-left {
     grid-area: top-left;
+    font-family: 'Racing Sans One', cursive;
+    color: #f9d86f;
+    font-size: 26px;
   }
   
   #top-right {
     grid-area: top-right;
-    /* background-color: #222; */
-    /* background-image: url('../img/funky-lines.png'); */
+    font-family: 'Racing Sans One', cursive;
+    color: #f9d86f;
+    font-size: 26px;
   }
   
   main {
@@ -93,6 +98,9 @@ html,body {
   #btm-left {
     grid-area: btm-left;
     /* background-color: #222; */
+    font-family: 'Racing Sans One', cursive;
+    color: #f9d86f;
+    font-size: 26px;
   }
   
   #btm-right {

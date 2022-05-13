@@ -41,11 +41,11 @@ const nut1 = new Nuts(485, 305, 'yellow', 20, 20)
 const nut2 = new Nuts(615, 210, 'yellow', 20, 20)
 const nut3 = new Nuts(455, 210, 'yellow', 20, 20)
 const nut4 = new Nuts(585, 305, 'yellow', 20, 20)
-nut0.render()
-nut1.render()
-nut2.render()
-nut3.render()
-nut4.render()
+// nut0.render()
+// nut1.render()
+// nut2.render()
+// nut3.render()
+// nut4.render()
 
 
 // // nuts random spawn
@@ -79,19 +79,30 @@ function getMousePos(canvas, e) {
 }
 
 // start game on first click
-canvas.addEventListener('click', startGame)
+function start(){
+    document.querySelector('#btm-left').innerText = 'CLICK TO START'
+    canvas.addEventListener('click', startGame)
+
+}
+
 
 
 function startGame(){
+    ctx.clearRect(0,0, canvas.width, canvas.height)
+    document.querySelector('#btm-left').innerText = 'COLLECT THE NUTS'
+
     canvas.removeEventListener('click', startGame) // wont start game over and over
+
     timer = setInterval(function(){ // going to take a sec off timer each second
     countdown--;
     console.log('end start', countdown, timer)
-    ctx.fillText('Time Remaining: ' + countdown, 10, 50);
+
+    document.querySelector('#top-right').innerText = 'Time Remaining: ' + countdown
     if (countdown <= 0) {
     clearInterval(timer)
     }
     }, 1000)
+
     // console.log('start')
     nut0.render()   
     nut1.render()
@@ -101,7 +112,7 @@ function startGame(){
     
     let n0x = 545 // nut  value + .5size
     let n0y = 160// nut y value + .5size
-    radius = 15
+    radius = 17
 
 
     // hit-test the nut render
@@ -302,42 +313,4 @@ function startGame(){
 }
 
 
-
-
-// let nutArr = [
-//     new Nuts(535, 150, 'yellow', 20, 20),
-//     // new Nuts(485, 305, 'yellow', 20, 20),
-//     // new Nuts(615, 210, 'yellow', 20, 20),
-//     // new Nuts(455, 210, 'yellow', 20, 20),
-//     // new Nuts(585, 305, 'yellow', 20, 20)
-// ]
-
-
-
-
-// function startGame(){
-//     ctx.clearRect(0, 0, canvas.width, canvas.height)
-//     canvas.removeEventListener('click', startGame)
-//     timer = setInterval(function(){ // going to take a sec off timer each second
-//         //     countdown--;
-//             ctx.fillText('Time Remaining: ' + countdown, 10, 50);
-//             if (countdown <= 0) {
-//             clearInterval(timer)
-//             }
-//             }, 1000)
-            
-//     for( let i = 0; i < nutArr.length; i++){
-//         nutArr[i].render()
-//         if(nutArr[i].alive === true &&
-//             nutArr[i].x < mouseX &&
-//             nutArr[i] + 20 > mouseX &&
-//             nutArr[i].y < mouseY &&
-//             nutArr[i].y + 20 > mouseY) {
-//             canvas.addEventListener('mousedown', function (e) {
-//                 ctx.clearRect(nutArr[i].x, nutArr[i].y, 20, 20)
-//                 nutArr[i].alive = false
-//             })
-//         }
-//     }
-    
-// }
+start()
