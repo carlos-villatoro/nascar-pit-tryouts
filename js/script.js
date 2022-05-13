@@ -131,17 +131,8 @@ function startGame(){
 
     canvas.addEventListener('mousemove', function (e) {
         let mousePos = getMousePos(canvas, e);
-        let message = 'Mouse position: ' + parseInt(mousePos.x) + ',' + parseInt(mousePos.y);
-        writeMessage(canvas, message);
     }, false); //tracks location of mouse in canvas
 
-    let mousePos;
-    function writeMessage(canvas, message) {
-        ctx.clearRect(0, 0, canvas.width, 30);
-        ctx.font = '18pt Calibri';
-        ctx.fillStyle = 'black';
-        ctx.fillText(message, 10, 25);
-    } // shows above
     
     let rand0x = Math.floor(Math.random() * canvas.width - 20)
     let rand0y = Math.floor(Math.random() * canvas.height -20 )
@@ -330,6 +321,11 @@ function gameLoop(){
             ){
                 endgame()
                 document.querySelector('#btm-right').innerText = "YOU DID IT! YOU'RE IN!!"
+        } else if(countdown <= 0) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
+            document.querySelector('#btm-right').innerText = "SORRY KID! TOO SLOW TO ROLL!!"
         }
-}), false}
+    }), false
+
+}
 gameLoop()
