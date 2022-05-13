@@ -3,11 +3,11 @@
 ## Lets get luggin ...
 
 
-### You feel the roars of the engines. You smell the burning of the tires. Your andreline is kicking. You've been a NASCAR™ fan since you could sit in the stands and now you're in the pits. 
+#### You feel the roars of the engines. You smell the burning of the tires. Your andreline is kicking. You've been a NASCAR™ fan since you could sit in the stands and now you're in the pits. 
 
-### Today you will be trying out to be a pit stop tire changer. You've been practicing the moves for weeks and today you will be picking up an impact gun and kicking some nuts loose!
+#### Today you will be trying out to be a pit stop tire changer. You've been practicing the moves for weeks and today you will be picking up an impact gun and kicking some nuts loose!
 
-### But if you can't beat the clock, you won't be suiting up for a raceday any time soon. Your job is to loosen every lug nut off the car's' wheel, pickup the the fallen lug nuts, zap them back onto the wheel ... __all before the clock reaches 0!__
+#### But if you can't beat the clock, you won't be suiting up for a raceday any time soon. Your job is to loosen every lug nut off the car's' wheel, pickup the the fallen lug nuts, zap them back onto the wheel ... __all before the clock reaches 0!__
 
 ---
 
@@ -24,9 +24,9 @@ __[Nascar-pit-tryouts](https://carlos-villatoro.github.io/nascar-pit-tryouts/)__
 * JavaScript
     * DOM Manipulation 
 
-### The approch to this game was to keep the DOM Manipulation in JavaScript simple. All the game variables created with an object class. Their locations were hardcoded with direct coordinates. Mousedown events were used to track the location of the mouse click in relation to the location of the game pieces. Those locations were cleared when clicked, and a 'alive' boolean was used to track their playing status. The win event was created once all game statuses were equal, the countdown was greater than 0, and the last instruction was followed. The lose event was created by listening for a click event after the countdown reached 0.
+#### The approch to this game was to keep the DOM Manipulation in JavaScript simple. All the game variables created with an object class. Their locations were hardcoded with direct coordinates. Mousedown events were used to track the location of the mouse click in relation to the location of the game pieces. Those locations were cleared when clicked, and a 'alive' boolean was used to track their playing status. The win event was created once all game statuses were equal, the countdown was greater than 0, and the last instruction was followed. The lose event was created by listening for a click event after the countdown reached 0.
 
-###  The game's timer and win/lose statement were displayed by using query selectors to fill in the innerText of HTML elements.
+####  The game's timer and win/lose statement were displayed by using query selectors to fill in the innerText of HTML elements.
 ---
 ## Original Wireframe and Goals
 ![WIREFRAME](./images/wireframe-1.jpeg)
@@ -87,11 +87,11 @@ __[Nascar-pit-tryouts](https://carlos-villatoro.github.io/nascar-pit-tryouts/)__
 ---
 ## Sources Used
 
-### https://bencentra.com/2017-07-11-basic-html5-canvas-games.html
+#### https://bencentra.com/2017-07-11-basic-html5-canvas-games.html
 * Helped with understanding control flow and and placement of game functions
 * Used in conjuction with previous class material
-### https://developer.ibm.com/tutorials/wa-games/#download
+#### https://developer.ibm.com/tutorials/wa-games/#download
 * Used to understand mouse events 
 
-### Various https://w3schools.com and https://developer.mozilla.org/ guides and refernces were used for documentation on mouse events, interval control, canvas manipulation, and many other functions. 
+#### Various https://w3schools.com and https://developer.mozilla.org/ guides and refernces were used for documentation on mouse events, interval control, canvas manipulation, and many other functions. 
 

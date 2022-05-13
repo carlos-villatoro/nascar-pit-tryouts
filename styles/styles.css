@@ -128,3 +128,10 @@ html,body {
         left: 0;
         pointer-events: none;
     }
+
+    button {
+      background-color: #3478bd;
+      font-family: 'Racing Sans One', cursive;
+      color: #f9d86f;
+      font-size: 26px;
+    }

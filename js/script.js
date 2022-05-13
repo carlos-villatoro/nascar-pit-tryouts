@@ -328,3 +328,17 @@ function gameLoop(){
 
 }
 gameLoop()
+
+document.getElementById('restart').addEventListener('click', function(){
+    countdown = 20
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    nut0.alive === true 
+    nut1.alive === true 
+    nut2.alive === true 
+    nut3.alive === true 
+    nut4.alive === true 
+    startGame()
+    document.querySelector('#btm-right').innerText = ''
+    document.querySelector('#top-right').innerText = ''
+    
+})
