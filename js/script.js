@@ -49,9 +49,9 @@ let nut4 = new Nuts(585, 305, 'yellow', 20, 20)
 // nut4.render()
 
 
-// // nuts random spawn
-// const randX = Math.floor(Math.random() * canvas.width - 20)
-// const randY = Math.floor(Math.random() * canvas.height - 20)
+// // // nuts random spawn
+// // const randX = Math.floor(Math.random() * canvas.width - 20)
+// // const randY = Math.floor(Math.random() * canvas.height - 20)
 let nutR0
 let nutR1
 let nutR2
@@ -78,6 +78,8 @@ function getMousePos(canvas, e) {
         y: e.clientY - rect.top
     }; // gets coordinates for the mouse click
 }
+
+
 
 // start game on first click
 function start(){
@@ -108,19 +110,12 @@ function startGame(){
     }
     }, 1000)
 
-    // let nut0 = new Nuts(535, 150, 'yellow', 20, 20)
-    // let nut1 = new Nuts(485, 305, 'yellow', 20, 20)
-    // let nut2 = new Nuts(615, 210, 'yellow', 20, 20)
-    // let nut3 = new Nuts(455, 210, 'yellow', 20, 20)
-    // let nut4 = new Nuts(585, 305, 'yellow', 20, 20)
-
-    // console.log('start')
-    nut0.render()   
+    nut0.render()
     nut1.render()
     nut2.render()
     nut3.render()
     nut4.render()
-    
+
     let n0x = 545 // nut  value + .5size
     let n0y = 160// nut y value + .5size
     radius = 17
@@ -342,7 +337,7 @@ function gameLoop(){
             document.querySelector('#btm-right').innerText = "SORRY KID! TOO SLOW"
         }
     }), false
-
+    
 }
 
 
@@ -352,14 +347,12 @@ document.getElementById('restart').addEventListener('click', function(){
     gameLoop()
     countdown = 20
     clearInterval(timer)
-    console.log(nut0)
+    nut0.alive = true
+    nut1.alive = true
+    nut2.alive = true
+    nut3.alive = true
+    nut4.alive = true
     
-
-    // let nut0
-    // let nut1
-    // let nut2
-    // let nut3
-    // let nut4
 })
 
 gameLoop()
