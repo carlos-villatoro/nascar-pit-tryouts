@@ -37,11 +37,11 @@ class Nuts {
 
 // // nuts specific spawn
 
-const nut0 = new Nuts(535, 150, 'yellow', 20, 20)
-const nut1 = new Nuts(485, 305, 'yellow', 20, 20)
-const nut2 = new Nuts(615, 210, 'yellow', 20, 20)
-const nut3 = new Nuts(455, 210, 'yellow', 20, 20)
-const nut4 = new Nuts(585, 305, 'yellow', 20, 20)
+let nut0 = new Nuts(535, 150, 'yellow', 20, 20)
+let nut1 = new Nuts(485, 305, 'yellow', 20, 20)
+let nut2 = new Nuts(615, 210, 'yellow', 20, 20)
+let nut3 = new Nuts(455, 210, 'yellow', 20, 20)
+let nut4 = new Nuts(585, 305, 'yellow', 20, 20)
 // nut0.render()
 // nut1.render()
 // nut2.render()
@@ -108,6 +108,11 @@ function startGame(){
     }
     }, 1000)
 
+    // let nut0 = new Nuts(535, 150, 'yellow', 20, 20)
+    // let nut1 = new Nuts(485, 305, 'yellow', 20, 20)
+    // let nut2 = new Nuts(615, 210, 'yellow', 20, 20)
+    // let nut3 = new Nuts(455, 210, 'yellow', 20, 20)
+    // let nut4 = new Nuts(585, 305, 'yellow', 20, 20)
 
     // console.log('start')
     nut0.render()   
@@ -162,6 +167,7 @@ function startGame(){
             ctx.clearRect(nutR0.x, nutR0.y, 20, 20)
             nut0.render()
             nut0.alive = false
+            console.log('nut0', nut0.alive)
         } 
     }, false)
 
@@ -202,6 +208,7 @@ function startGame(){
             ctx.clearRect(nutR1.x, nutR1.y, 20, 20)
             nut1.render()
             nut1.alive = false
+            console.log('nut1', nut1.alive)
         } 
     }, false)
     
@@ -235,6 +242,7 @@ function startGame(){
             ctx.clearRect(nutR2.x, nutR2.y, 20, 20)
             nut2.render()
             nut2.alive = false
+            console.log('nut2', nut2.alive)
         }  
     }, false)
 
@@ -270,6 +278,7 @@ function startGame(){
             ctx.clearRect(nutR3.x, nutR3.y, 20, 20)
             nut3.render()
             nut3.alive = false
+            console.log('nut3', nut3.alive)
         }  
     }, false)
 
@@ -305,7 +314,8 @@ function startGame(){
             ctx.clearRect(nutR4.x, nutR4.y, 20, 20)
             nut4.render()
             nut4.alive = false
-
+            console.log('nut4', nut4.alive)
+            console.log(nut0.alive, nut1.alive, nut2.alive, nut3.alive, nut4.alive)
         }  
     }, false)
 
@@ -317,7 +327,7 @@ function gameLoop(){
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     start()
     console.log(nut0.alive, nut1.alive, nut2.alive, nut3.alive, nut4.alive)
-    canvas.addEventListener('mousedown', function (e) {
+    canvas.addEventListener('click', function (e) {
         if(nut0.alive === false &&
             nut1.alive === false &&
             nut2.alive === false &&
@@ -337,11 +347,6 @@ function gameLoop(){
 
 
 document.getElementById('restart').addEventListener('click', function(){
-    // countdown = 20
-    // ctx.clearRect(0, 0, canvas.width, canvas.height)
-    // console.log(nut0.alive, nut1.alive, nut2.alive, nut3.alive, nut4.alive)
-
-    // start()
     document.querySelector('#btm-right').innerText = ''
     document.querySelector('#top-right').innerText = ''
     gameLoop()
@@ -349,13 +354,12 @@ document.getElementById('restart').addEventListener('click', function(){
     clearInterval(timer)
     console.log(nut0)
     
-    nut0.alive = true
-    nut1.alive = true
-    nut2.alive = true
-    nut3.alive = true
-    nut4.alive = true
 
-    
+    // let nut0
+    // let nut1
+    // let nut2
+    // let nut3
+    // let nut4
 })
 
 gameLoop()
