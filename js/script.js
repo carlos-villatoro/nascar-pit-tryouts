@@ -36,6 +36,7 @@ class Nuts {
 }
 
 // // nuts specific spawn
+
 const nut0 = new Nuts(535, 150, 'yellow', 20, 20)
 const nut1 = new Nuts(485, 305, 'yellow', 20, 20)
 const nut2 = new Nuts(615, 210, 'yellow', 20, 20)
@@ -86,6 +87,7 @@ function start(){
 }
 
 function endgame(){
+    countdown = 20
     clearInterval(timer)
 }
 
@@ -97,14 +99,15 @@ function startGame(){
     canvas.removeEventListener('click', startGame) // wont start game over and over
 
     timer = setInterval(function(){ // going to take a sec off timer each second
-    countdown--;
-    console.log('end start', countdown, timer)
+        countdown--;
+        console.log('end start', countdown, timer)
 
-    document.querySelector('#top-right').innerText = 'Time Remaining: ' + countdown
-    if (countdown <= 0) {
-    clearInterval(timer)
+        document.querySelector('#top-right').innerText = 'Time Remaining: ' + countdown
+        if (countdown <= 0) {
+        clearInterval(timer)
     }
     }, 1000)
+
 
     // console.log('start')
     nut0.render()   
@@ -307,6 +310,8 @@ function startGame(){
     }, false)
 
 }
+
+///////////////////////////////////////////////////////////////////
 function gameLoop(){
     // clear the canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -321,24 +326,36 @@ function gameLoop(){
             ){
                 endgame()
                 document.querySelector('#btm-right').innerText = "YOU DID IT! YOU'RE IN!!"
+                console.log(nut0.alive, nut1.alive, nut2.alive, nut3.alive, nut4.alive)
         } else if(countdown <= 0) {
             ctx.clearRect(0, 0, canvas.width, canvas.height)
+            document.querySelector('#btm-right').innerText = "SORRY KID! TOO SLOW"
         }
     }), false
 
 }
-gameLoop()
+
 
 document.getElementById('restart').addEventListener('click', function(){
-    countdown = 20
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
-    nut0.alive === true 
-    nut1.alive === true 
-    nut2.alive === true 
-    nut3.alive === true 
-    nut4.alive === true 
-    startGame()
+    // countdown = 20
+    // ctx.clearRect(0, 0, canvas.width, canvas.height)
+    // console.log(nut0.alive, nut1.alive, nut2.alive, nut3.alive, nut4.alive)
+
+    // start()
     document.querySelector('#btm-right').innerText = ''
     document.querySelector('#top-right').innerText = ''
+    gameLoop()
+    countdown = 20
+    clearInterval(timer)
+    console.log(nut0)
+    
+    nut0.alive = true
+    nut1.alive = true
+    nut2.alive = true
+    nut3.alive = true
+    nut4.alive = true
+
     
 })
+
+gameLoop()
